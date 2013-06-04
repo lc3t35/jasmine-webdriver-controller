@@ -1,13 +1,25 @@
 window.WebdriverHelper =
+    getDeferred: ->
+        new webdriver.promise.Deferred()
+
+    waitFor: (opts) ->
+        unless opts.timeout?
+            opts.timeout = 7000
+
+        unless opts.condition?
+            throw new Error('Condition attribute not specified')
+
+        webdriver.promise.Application.getInstance().scheduleWait opts.description, opts.condition, opts.timeout, opts.message
+
     waitForElement: (selector) ->
         selector.doNotReject = true
         new webdriver.WebElement(
             driver,
-            once(
+            @waitFor(
                 condition: => @isElementPresent(selector)
                 description: 'element to be present'
             ).then =>
-                once(
+                @waitFor(
                     condition: =>
                         @findElement(selector)
                     description: "Waiting for element matching #{@_selectorToString(selector)} to be in the DOM"
@@ -18,7 +30,7 @@ window.WebdriverHelper =
         selector.doNotReject = true
         new webdriver.WebElement(
             driver,
-            once(
+            @waitFor(
                 condition: =>
                     @findElement(selector).then (el) ->
                         el?.isDisplayed().then (displayed) ->
@@ -31,7 +43,7 @@ window.WebdriverHelper =
     ## @return {webdriver.promise.Promise} that resolves to null
     waitForNotVisible: (selector) ->
         deferred = @getDeferred()
-        once(
+        @waitFor(
             condition: =>
                 @findElement(selector).then (el) ->
                     el.isDisplayed().then (displayed) =>

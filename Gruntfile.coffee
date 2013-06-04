@@ -4,6 +4,8 @@ module.exports = (grunt) ->
     grunt.loadNpmTasks 'grunt-contrib-jasmine'
 #    grunt.loadNpmTasks 'grunt-contrib-watch'
     grunt.loadNpmTasks 'grunt-contrib-clean'
+    grunt.loadNpmTasks 'grunt-express'
+    grunt.loadNpmTasks 'grunt-webdriver-jasmine-runner'
 
     grunt.initConfig
         pkg: grunt.file.readJSON('package.json')
@@ -38,3 +40,25 @@ module.exports = (grunt) ->
                         'js/WebdriverHelper.js'
                         'js/JasmineSetup.js'
                     ]
+                    vendor: [
+                        'libs/jquery-1.10.1.min.js'
+                        'libs/lodash.min.js'
+                        'libs/webdriver.js'
+                    ]
+
+        express:
+            server:
+                options:
+                    port: 8777
+                    bases: [
+                        '.'
+                    ]
+                    debug: false
+
+        webdriver_jasmine_runner:
+            main:
+                options:
+                    testServerPort: 8777
+
+    grunt.registerTask 'test', ['clean', 'coffee', 'jasmine:main:build', 'express', 'webdriver_jasmine_runner']
+

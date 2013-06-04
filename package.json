@@ -5,9 +5,13 @@
         "start": "nodemon server/src/gen/app.js",
         "start-dev": "./run_as.sh dev"
     },
+    "dependencies": {
+    },
     "devDependencies": {
+        "grunt-express": "~0.3.2",
         "grunt-contrib-coffee": "~0.7.0",
         "grunt-contrib-jasmine": "~0.4.2",
-        "grunt-contrib-clean": "~0.4.1"
+        "grunt-contrib-clean": "~0.4.1",
+        "grunt-webdriver-jasmine-runner": "git+ssh://git@github.com:RallySoftware/grunt-webdriver-jasmine-runner.git#v0.0.5"
     }
 }
