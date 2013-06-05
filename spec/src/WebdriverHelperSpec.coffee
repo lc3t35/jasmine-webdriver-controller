@@ -14,7 +14,9 @@ describe 'WebdriverHelper', ->
         promise.then ->
             $('#testDiv').remove()
 
-        $('<div id="testDiv"></div>').appendTo 'body'
+        window.setTimeout () =>
+            $('<div id="testDiv"></div>').appendTo 'body'
+        , 50
 
         promise
 
@@ -25,7 +27,9 @@ describe 'WebdriverHelper', ->
         promise.then ->
             testDiv.remove()
 
-        testDiv.show()
+        window.setTimeout () =>
+            testDiv.show()
+        , 50
 
         promise
 
@@ -36,7 +40,9 @@ describe 'WebdriverHelper', ->
         promise.then ->
             testDiv.remove()
 
-        testDiv.hide()
+        window.setTimeout () =>
+            testDiv.hide()
+        , 50
 
         promise
 

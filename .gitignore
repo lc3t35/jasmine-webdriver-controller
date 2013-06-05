@@ -19,3 +19,5 @@ node_modules
 
 js
 spec/js
+.grunt
+_SpecRunner.html
