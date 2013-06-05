@@ -41,7 +41,7 @@ module.exports = (grunt) ->
                         'js/JasmineSetup.js'
                     ]
                     vendor: [
-                        'libs/jquery-1.10.1.min.js'
+                        'spec/libs/jquery-1.10.1.min.js'
                         'libs/lodash.min.js'
                         'libs/webdriver.js'
                     ]

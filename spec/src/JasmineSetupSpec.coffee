@@ -1,15 +1,4 @@
 describe 'JasmineSetup', ->
-    it 'attaches webdriver helpers to each spec when it is executed', ->
-        expect(typeof @getDeferred).toBe("function")
-        expect(typeof @waitForElement).toBe("function")
-        expect(typeof @waitForVisible).toBe("function")
-        expect(typeof @waitForNotVisible).toBe("function")
-        expect(typeof @findElement).toBe("function")
-        expect(typeof @isElementPresent).toBe("function")
-        expect(typeof @click).toBe("function")
-        expect(typeof @mouseOver).toBe("function")
-        expect(typeof @sendKeys).toBe("function")
-
     it 'defines a "driver" globally and attaches it to each spec', ->
         expect(window.driver).not.toBeUndefined()
         expect(@driver).toEqual window.driver

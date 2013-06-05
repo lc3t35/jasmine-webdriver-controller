@@ -20,5 +20,3 @@ window.it = (description, test) ->
 beforeEach ->
     _.extend @, WebdriverHelper
     @driver = window.driver = window.driver or new webdriver.Builder().build()
-
-afterEach ->
