@@ -6,6 +6,7 @@ module.exports = (grunt) ->
     grunt.loadNpmTasks 'grunt-contrib-clean'
     grunt.loadNpmTasks 'grunt-express'
     grunt.loadNpmTasks 'grunt-webdriver-jasmine-runner'
+    grunt.loadNpmTasks 'grunt-bower-task'
 
     grunt.initConfig
         pkg: grunt.file.readJSON('package.json')
@@ -13,8 +14,11 @@ module.exports = (grunt) ->
         clean: [
             'spec/js'
             'js'
+            'lib'
         ]
 
+        bower:
+            install:{}
 
         coffee:
             test:
@@ -41,9 +45,9 @@ module.exports = (grunt) ->
                         'js/JasmineSetup.js'
                     ]
                     vendor: [
-                        'spec/libs/jquery-1.10.1.min.js'
-                        'libs/lodash.min.js'
-                        'libs/webdriver.js'
+                        'lib/jquery/jquery.js'
+                        'lib/lodash/lodash.compat.js'
+                        'src/lib/webdriver.js'
                     ]
 
         express:
@@ -60,5 +64,5 @@ module.exports = (grunt) ->
                 options:
                     testServerPort: 8777
 
-    grunt.registerTask 'test', ['clean', 'coffee', 'jasmine:main:build', 'express', 'webdriver_jasmine_runner']
+    grunt.registerTask 'test', ['clean', 'bower', 'coffee', 'jasmine:main:build', 'express', 'webdriver_jasmine_runner']
 

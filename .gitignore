@@ -13,9 +13,13 @@ lib-cov
 pids
 logs
 results
+_SpecRunner.html
 
 npm-debug.log
 node_modules
+components
+lib
+.grunt
 
 js
 spec/js

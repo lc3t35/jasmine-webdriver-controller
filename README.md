@@ -12,7 +12,7 @@ Overview
 
 Selectors
 ---------
-The documentation for the selector factories in Webdriver JS is poor. Here's an example:
+The documentation for the selector factories in WebdriverJS is poor. Here's an example:
 
 By.id("user")
 
@@ -24,21 +24,24 @@ All of the available methods are added to the `this` object for each spec. They 
 test as `this.method-name()`.
 
 ### getDeferred()
-A convenience factory for Webdriver JS `Deferred` objects. These objects contain a promise and the methods to resolve
+getDeferred() => *webdriver.promise.Deferred*
+
+A convenience factory for WebdriverJS `Deferred` objects. These objects contain a promise and the methods to resolve
 the promise.
 
 See <https://code.google.com/p/selenium/wiki/WebDriverJs#Deferred_Objects> for a complete explaination of `Deferred`.
 
-- returns: webdriver.promise.Deferred
-
 ### waitForElement(selector)
+waitForElement(selector) => *webdriver.promise.Promise*
+
 Waits until the element selected by the `selector` exists in the DOM.
 
-- parameters:
-    - selector -- a valid Webdriver selector
-- returns: webdriver.promise.Promise
+#### parameters:
+- selector -- a valid Webdriver selector
 
 ### waitForVisible(selector)
+waitForVisible(selector) => *webdriver.promise.Promise*
+
 Waits until the element selected by the `selector` is visible in the DOM. For an element to be visible, all of the
 following must be true:
 
@@ -47,11 +50,12 @@ following must be true:
 -   It does not have the CSS `display: none` applied to it
 -   It has a non-zero height and width
 
-- parameters:
-    - selector -- a valid Webdriver selector
-- returns: webdriver.promise.Promise
+#### parameters:
+- selector -- a valid Webdriver selector
 
 ### waitForNotVisible(selector)
+waitForNotVisible(selector) => *webdriver.promise.Promise*
+
 Waits until the element selected by the `selector` is not visible in the DOM. For an element to not be visible, at least
 one of the following must be true:
 
@@ -60,32 +64,37 @@ one of the following must be true:
 -   It has the CSS `display: none` applied to it
 -   It has a zero height or width
 
-- parameters:
-    - selector -- a valid Webdriver selector
-- returns: webdriver.promise.Promise
+#### parameters:
+- selector -- a valid Webdriver selector
 
 ### click(selector)
+click(selector) => *webdriver.promise.Promise*
+
 Clicks the element selected by the `selector`.
 
-- parameters:
-    - selector -- a valid Webdriver selector
-- returns: webdriver.promise.Promise
+#### parameters:
+- selector -- a valid Webdriver selector
 
 ### mouseOver(selector)
+mouseOver(selector) => *webdriver.promise.Promise*
+
 Hovers the mouse cursor over the element selected by the `selector`.
 
-- parameters:
-    - selector -- a valid Webdriver selector
-- returns: webdriver.promise.Promise
+#### parameters:
+- selector -- a valid Webdriver selector
 
 ### sendKeys(selector, keys)
+sendKeys(selector, keys) => *webdriver.promise.Promise*
+
 Gives focus to the element selected by the `selector`, then sends keystrokes.
 
-- parameters:
-    - selector -- a valid Webdriver selector
-    - keys -- a string of keys to be sent
+#### parameters
+- **selector**
 
-- returns: webdriver.promise.Promise
+  a valid Webdriver selector
+- **keys**
+
+  a string of keys to be sent
 
 TODO
 ----
