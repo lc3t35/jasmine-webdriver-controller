@@ -1,5 +1,5 @@
 {
-    "name": "rally-navigation-component",
+    "name": "jasmine-webdriver-controller",
     "description": "Adds methods to jasmine that enable it to send commands to a webdriver server",
     "version": "0.1.0",
     "homepage": "https://github.com/RallySoftware/jasmine-webdriver-controller",
