@@ -21,7 +21,7 @@ components
 lib
 .grunt
 
-js
-spec/js
+dist
+spec/dist
 .grunt
 _SpecRunner.html

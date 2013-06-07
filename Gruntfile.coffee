@@ -2,7 +2,6 @@ module.exports = (grunt) ->
     'use strict'
     grunt.loadNpmTasks 'grunt-contrib-coffee'
     grunt.loadNpmTasks 'grunt-contrib-jasmine'
-#    grunt.loadNpmTasks 'grunt-contrib-watch'
     grunt.loadNpmTasks 'grunt-contrib-clean'
     grunt.loadNpmTasks 'grunt-express'
     grunt.loadNpmTasks 'grunt-webdriver-jasmine-runner'
@@ -12,8 +11,9 @@ module.exports = (grunt) ->
         pkg: grunt.file.readJSON('package.json')
 
         clean: [
-            'spec/js'
-            'js'
+            'spec/dist'
+            'dist'
+            'components'
             'lib'
         ]
 
@@ -25,25 +25,24 @@ module.exports = (grunt) ->
                 expand: true
                 cwd: 'spec/src'
                 src: ['**/*.coffee']
-                dest: 'spec/js'
+                dest: 'spec/dist'
                 ext: '.js'
 
             main:
                 expand: true
                 cwd: 'src'
                 src: ['**/*.coffee']
-                dest: 'js'
+                dest: 'dist'
                 ext: '.js'
 
         jasmine:
             main:
-                src: 'js/**/*.js'
+                src: [
+                    'dist/WebdriverHelper.js'
+                    'dist/JasmineSetup.js'
+                ]
                 options:
-                    specs: 'spec/js/*Spec.js'
-                    helpers: [
-                        'js/WebdriverHelper.js'
-                        'js/JasmineSetup.js'
-                    ]
+                    specs: 'spec/dist/*Spec.js'
                     vendor: [
                         'lib/jquery/jquery.js'
                         'lib/lodash/lodash.compat.js'

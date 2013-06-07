@@ -96,8 +96,8 @@ Gives focus to the element selected by the `selector`, then sends keystrokes.
 
   a string of keys to be sent
 
-TODO
-----
-- Expose the webdriver selector factories (because it is so hard to find documentation for them).
-- Figure out whether findElement() and isElementPresent() should be part of this API.
-- Figure out to make the 'failing test' specs not fail the tests.
+Contributors
+------------
+- [bgok](https://github.com/bgok)
+- [mattparrish](https://github.com/mattparrish)
+- [NicholasBoll](https://github.com/NicholasBoll)

@@ -2,7 +2,7 @@
     "name": "jasmine-webdriver-controller",
     "version": "0.1.0",
     "dependencies": {
-        "jquery": "~1.10",
-        "lodash": "*"
+        "jquery": "~1.10.1",
+        "lodash": "~1.2.1"
     }
 }
