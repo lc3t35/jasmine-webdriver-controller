@@ -1,7 +1,7 @@
 {
     "name": "jasmine-webdriver-controller",
     "description": "Adds methods to jasmine that enable it to send commands to a webdriver server",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "homepage": "https://github.com/RallySoftware/jasmine-webdriver-controller",
     "author": {
         "name": "Ken Heutmaker (bgok)",
@@ -9,7 +9,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/RallySoftware/jasmine-webdriver-controller"
+        "url": "https://github.com/RallySoftware/jasmine-webdriver-controller/tree/0.1.1"
     },
     "bugs": {
         "url": "https://github.com/RallySoftware/jasmine-webdriver-controller/issues"
