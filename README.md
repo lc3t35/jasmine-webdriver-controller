@@ -1,3 +1,4 @@
+[![Stories in Ready](http://badge.waffle.io/RallySoftware/jasmine-webdriver-controller.png)](http://waffle.io/RallySoftware/jasmine-webdriver-controller)  
 jasmine-webdriver-controller
 ============================
 Adds methods to jasmine that enable it to send commands to a webdriver server. This allows for component oriented
